@@ -1,73 +1,53 @@
-# Assignment 1: Claims, questions and attempt record
+  
+\# Assignment 3: Two Averages, One Argument
 
-Student: Muhammad Sameed Khalid | ERP: 36145
+\#\# Referee's Note
 
-## Timing and original-attempt evidence
+\#\#\# 1\. Understanding the dataset
 
-This file contains a post-AI working draft. It is not a record of an attempt
-completed before AI use. A genuine earlier snapshot, commit hash and initial
-predictions were not supplied. Existing earlier evidence should be preserved
-if it exists; the values below are actual results, not reconstructed predictions.
+\*\*O:\*\* The teaching dataset contains 96 observations, covering four items across City 1 and City 2 over 12 weekly dates.
 
-## Working claim 1
+\*\*O:\*\* The dataset records prices in illustrative PKR per kg and is explicitly labelled as teaching data rather than actual PBS observations.
 
-**Claim:** Everything costs more now.
+\#\#\# 2\. Mean and median
 
-**Question:** How did the recorded price of Staple A in City 1 change between 1 January and 19 March 2026, measured in the dataset's illustrative PKR per kg?
+\*\*O:\*\* For Staple A in City 1, the mean price is 108.17 while the median price is 107.75.
 
-**Variables needed:** date, item, city, price and unit.
+\*\*O:\*\* For Oil B in City 1, the mean is 321.83 and the median is 321.00.
 
-The claim is too broad because it does not identify which goods, where or
-compared with when. The question fixes one item, one city, two observed dates
-and one unit. The file has the two required matching observations.
+\*\*O:\*\* For Pulse C in City 1, the mean is 202.92 and the median is 202.50.
 
-**Supporting check:** Staple A in City 1 is 101.0 on 1 January and 114.5 on
-19 March. The increase is 13.5 illustrative PKR per kg, or about 13.37%.
-This supports the narrow comparison, not a claim about every good or every week.
+\*\*O:\*\* For Sweetener D in City 1, both the mean and median are 163.75.
 
-## Working claim 2
+\*\*E:\*\* The relatively small differences between the mean and median suggest that both measures describe a similar central price in these particular groups.
 
-**Claim:** Prices are higher in City 2 than in City 1.
+\*\*E:\*\* The mean and median can differ because the mean uses the size of every observation, whereas the median depends on the middle position after the observations are arranged in order.
 
-**Question:** For each item on each of the 12 dates, how much did its recorded price in City 2 differ from its price in City 1, using the same illustrative PKR per kg unit?
+\#\#\# 3\. First-to-last percentage change
 
-**Variables needed:** date, item, city, price and unit.
+\*\*O:\*\* Sweetener D in City 1 has the largest first-to-last percentage increase, at approximately 19.80%.
 
-This question compares the same item and date in the two labelled cities.
-It avoids comparing different products, dates or measurement units. All four
-items have both cities recorded on all 12 dates.
+\*\*O:\*\* Pulse C in City 1 has the smallest first-to-last percentage increase, at 3.75%.
 
-**Supporting check:** There are 48 matched item-date comparisons. City 2 is
-6.0 illustrative PKR per kg higher in each pair.
+\*\*O:\*\* All four items have a higher final recorded price than their first recorded price in both cities.
 
-These are generic working claims and AI-assisted question drafts. This file
-does not claim that the student personally heard these exact statements.
+\*\*E:\*\* The percentage change provides a way to compare the relative increase of items that begin at different price levels.
 
-## Predictions and actual results
+\#\#\# 4\. Limits of interpretation
 
-| Check | Original prediction | Actual result | Comparison |
-| --- | --- | --- | --- |
-| Shape (rows, columns) | Not supplied | (96, 6) | No genuine prediction was available for comparison. |
-| Distinct items | Not supplied | 4 | No genuine prediction was available for comparison. |
-| Distinct dates | Not supplied | 12 | No genuine prediction was available for comparison. |
+\*\*O:\*\* City 2 records prices exactly 6 PKR per kg higher than City 1 for every matching item and date in this teaching dataset.
 
-There are four items in two cities on twelve dates, giving 4 x 2 x 12 = 96
-data rows. The six columns are date, item, city, price, unit and data_label.
+\*\*E:\*\* This consistent difference describes how the two city series have been constructed, but it does not explain why such a difference exists in the real world.
 
-## Scope and definitions checked against the CSV
+\*\*O:\*\* The dataset does not include information about inflation, supply costs, transport, shortages, taxes or other possible causes of price changes.
 
-One row records an illustrative price for one item in one labelled city on
-one date. The item labels are Staple A, Oil B, Pulse C and Sweetener D.
-The dates run weekly from 1 January to 19 March 2026. All units are
-PKR per kg (illustrative). The data_label field states that these are
-illustrative teaching data, not actual PBS observations.
+\*\*O:\*\* Therefore, the dataset alone cannot establish that any particular economic factor caused the recorded increases.
 
-The header and all rows were checked. The official dictionary remains
-unavailable, so these observed definitions are not represented as an
-independent dictionary check.
+\#\#\# 5\. Referee's conclusion
 
-## Column reference
+\*\*E:\*\* The mean and median should be considered together because they describe the centre of the observations in different ways.
 
-The field definitions, units, observed coverage and unavailable variables are
-documented in ../../data/column_reference.md. That file is derived from the
-supplied CSV; it is not presented as the instructor's original dictionary.
+\*\*O:\*\* The percentage changes describe the movement between the first and last recorded prices, but they do not explain what happened between those dates or why the changes occurred.
+
+\*\*O:\*\* Since the data is illustrative, the findings should be treated as an exercise in descriptive analytics rather than evidence about actual market prices.
+
